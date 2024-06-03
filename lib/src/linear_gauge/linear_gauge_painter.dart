@@ -973,6 +973,7 @@ class RenderLinearGauge extends RenderBox
     } else {
       effectiveLabelWidth = _linearGaugeLabel.startLabelSize.width;
     }
+    effectiveLabelWidth = 10;
     effectiveLabelHeight = _linearGaugeLabel.startLabelSize.height;
 
     double? y;
@@ -1788,7 +1789,7 @@ class RenderLinearGauge extends RenderBox
 
   double getLabelWidth() {
     double labelThickness = _linearGaugeLabel
-        .getLabelSize(textStyle: getTextStyle, value: getEnd.toString())
+        .getLabelSize(textStyle: getTextStyle, value: (getEnd as double).toStringAsFixed(2))
         .width;
     return labelThickness;
   }
